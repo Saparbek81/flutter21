@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xffECB90B),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: const Color(0xffECB90B),
+        title: const Text(
+          'Tapshurma 3',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'I am Rich',
+              style: GoogleFonts.sofia(fontSize: 48),
+            ),
+            Image.asset(
+              'assets/almaz.png.png',
+            ),
+          ],
+        ),
+      ),
+    );
+    
+  }
+}
