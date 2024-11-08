@@ -16,16 +16,14 @@ class MyHomePage extends StatelessWidget {
           Questions(
             text: quizeList[0].question,
           ),
-          CustomButton(
-            text: quizeList[0].answer.toString(),
-            color: const Color(0xff4cb050),
+          const CustomButton(
+            text: 'Туура',
+            color: Color(0xff4cb050),
           ),
           const SizedBox(
             height: 30,
           ),
-          CustomButton(
-              text: quizeList[0].answer.toString(),
-              color: const Color(0xffaf443a)),
+          const CustomButton(text: 'Туура эмес', color: Color(0xffaf443a)),
         ]),
       ),
     );

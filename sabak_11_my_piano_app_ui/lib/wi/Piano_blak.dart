@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 class PianoBlack extends StatelessWidget {
   const PianoBlack({
     super.key,
-    required this.text,
-    required this.left,
+    required this.text1,
+    required this.left1,
     this.right,
     this.onPressed,
   });
-  final double? left;
+  final double? left1;
   final double? right;
-  final String text;
+  final String text1;
   final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: left,
+      left: left1,
       right: right,
       child: Container(
           width: 38.9,
@@ -28,22 +28,26 @@ class PianoBlack extends StatelessWidget {
                 topLeft: Radius.circular(5),
                 topRight: Radius.circular(5),
               )),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Center(
-                child: Text(text,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 19.6,
-                      fontWeight: FontWeight.w400,
-                    )),
-              ),
-              const SizedBox(
-                height: 20,
-              )
-            ],
-          )),
+          child: GestureDetector(
+              onTap: onPressed,
+              child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Center(
+                        child: Text(text1,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 19.6,
+                              fontWeight: FontWeight.w400,
+                            )),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      )
+                    ],
+                  )))),
     );
   }
 }

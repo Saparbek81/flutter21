@@ -13,108 +13,122 @@ class PianoPage extends StatelessWidget {
         appBar: myAppBar(),
         body: Column(children: [
           const Spacer(),
-          Stack(children: [
-            Row(
-              children: [
-                PianoKey(
-                  text: 'f1',
+          Stack(
+            children: [
+              Row(
+                children: [
+                  PianoKey(
+                    text: 'f1',
+                    onPressed: () => nota.play(AssetSource('nota/do.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f2',
+                    onPressed: () => nota.play(AssetSource('nota/re.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f3',
+                    onPressed: () => nota.play(AssetSource('nota/mi.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f4',
+                    onPressed: () => nota.play(AssetSource('nota/fa.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f5',
+                    onPressed: () => nota.play(AssetSource('nota/so.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f6',
+                    onPressed: () => nota.play(AssetSource('nota/la.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f7',
+                    onPressed: () => nota.play(AssetSource('nota/si.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f8',
+                    onPressed: () => nota.play(AssetSource('nota/do.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f9',
+                    onPressed: () => nota.play(AssetSource('nota/re.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f10',
+                    onPressed: () => nota.play(AssetSource('nota/mi.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f11',
+                    onPressed: () => nota.play(AssetSource('nota/fa.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f12',
+                    onPressed: () => nota.play(AssetSource('nota/so.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f13',
+                    onPressed: () => nota.play(AssetSource('nota/la.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f14',
+                    onPressed: () => nota.play(AssetSource('nota/si.wav')),
+                  ),
+                  PianoKey(
+                    text: 'f15',
+                    onPressed: () => nota.play(AssetSource('nota/do.wav')),
+                  ),
+                ],
+              ),
+              Row(children: [
+                const SizedBox(width: 38),
+                PianoBlack(
+                  text1: 'f1',
                   onPressed: () => nota.play(AssetSource('nota/do.wav')),
+                  left1: 12,
                 ),
-                PianoKey(
-                  text: 'f2',
+                const SizedBox(width: 22),
+                PianoBlack(
+                  text1: 'f2',
                   onPressed: () => nota.play(AssetSource('nota/re.wav')),
+                  left1: 150,
                 ),
-                PianoKey(
-                  text: 'f3',
-                  onPressed: () => nota.play(AssetSource('nota/mi.wav')),
+                const SizedBox(width: 83),
+                const PianoBlack(text1: 'f3', left1: 224),
+                const SizedBox(width: 25),
+                const PianoBlack(text1: 'f4', left1: 284),
+                const SizedBox(width: 25),
+                const PianoBlack(
+                  text1: 'f5',
+                  left1: 345,
                 ),
-                PianoKey(
-                  text: 'f4',
-                  onPressed: () => nota.play(AssetSource('nota/fa.wav')),
+                const SizedBox(width: 80),
+                const PianoBlack(
+                  text1: 'f6',
+                  left1: 465,
                 ),
-                PianoKey(
-                  text: 'f5',
-                  onPressed: () => nota.play(AssetSource('nota/so.wav')),
+                const SizedBox(width: 25),
+                const PianoBlack(
+                  text1: 'f7',
+                  left1: 530,
                 ),
-                PianoKey(
-                  text: 'f6',
-                  onPressed: () => nota.play(AssetSource('nota/la.wav')),
+                const SizedBox(width: 95),
+                const PianoBlack(
+                  text1: 'f8',
+                  left1: 665,
                 ),
-                PianoKey(
-                  text: 'f7',
-                  onPressed: () => nota.play(AssetSource('nota/si.wav')),
+                const SizedBox(width: 30),
+                const PianoBlack(
+                  text1: 'f9',
+                  left1: 733,
                 ),
-                PianoKey(
-                  text: 'f8',
-                  onPressed: () => nota.play(AssetSource('nota/do.wav')),
+                const SizedBox(width: 30),
+                const PianoBlack(
+                  text1: 'f10',
+                  left1: 803,
                 ),
-                PianoKey(
-                  text: 'f9',
-                  onPressed: () => nota.play(AssetSource('nota/re.wav')),
-                ),
-                PianoKey(
-                  text: 'f10',
-                  onPressed: () => nota.play(AssetSource('nota/mi.wav')),
-                ),
-                PianoKey(
-                  text: 'f11',
-                  onPressed: () => nota.play(AssetSource('nota/fa.wav')),
-                ),
-                PianoKey(
-                  text: 'f12',
-                  onPressed: () => nota.play(AssetSource('nota/so.wav')),
-                ),
-                PianoKey(
-                  text: 'f13',
-                  onPressed: () => nota.play(AssetSource('nota/la.wav')),
-                ),
-                PianoKey(
-                  text: 'f14',
-                  onPressed: () => nota.play(AssetSource('nota/si.wav')),
-                ),
-                PianoKey(
-                  text: 'f15',
-                  onPressed: () => nota.play(AssetSource('nota/do.wav')),
-                ),
-              ],
-            ),
-            PianoBlack(
-              text: 'f1',
-              onPressed: () => nota.play(AssetSource('nota/do.wav')),
-              left: 40,
-            ),
-            PianoBlack(
-              text: 'f2',
-              onPressed: () => nota.play(AssetSource('nota/re.wav')),
-              left: 100,
-            ),
-            const PianoBlack(text: 'f3', left: 224),
-            const PianoBlack(text: 'f4', left: 284),
-            const PianoBlack(
-              text: 'f5',
-              left: 345,
-            ),
-            const PianoBlack(
-              text: 'f6',
-              left: 465,
-            ),
-            const PianoBlack(
-              text: 'f7',
-              left: 530,
-            ),
-            const PianoBlack(
-              text: 'f8',
-              left: 665,
-            ),
-            const PianoBlack(
-              text: 'f9',
-              left: 733,
-            ),
-            const PianoBlack(
-              text: 'f10',
-              left: 803,
-            ),
-          ]),
+              ])
+            ],
+          ),
         ]));
   }
 
