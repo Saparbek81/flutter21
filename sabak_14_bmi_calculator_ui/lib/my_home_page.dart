@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sabak_14_bmi_calculator_ui/widgets/Heihgt_container.dart';
 import 'package:sabak_14_bmi_calculator_ui/widgets/male_container.dart';
+import 'package:sabak_14_bmi_calculator_ui/widgets/weight_container.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -17,11 +19,45 @@ class MyHomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  malecontainer(),
-                  SizedBox(
-                    width: 35,
+                  malecontainer(
+                    icons: Icons.male,
+                    text: 'male',
                   ),
-                  malecontainer(),
+                  SizedBox(width: 35),
+                  malecontainer(
+                    text: 'fameli',
+                    icons: Icons.male,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 18,
+            ),
+            HeihgtContainer(
+              text: 'HEIGHT',
+              textCm: '180 sm',
+            ),
+            SizedBox(
+              height: 18,
+            ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  WeightContainer(
+                    text: 'WEIGHT',
+                    iconadd: Icons.add,
+                    iconremove: Icons.remove,
+                    san: 60,
+                  ),
+                  SizedBox(width: 35),
+                  WeightContainer(
+                    text: 'AGE',
+                    iconadd: Icons.add,
+                    iconremove: Icons.remove,
+                    san: 28,
+                  ),
                 ],
               ),
             ),
