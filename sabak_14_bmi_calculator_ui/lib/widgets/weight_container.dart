@@ -40,28 +40,38 @@ class WeightContainer extends StatelessWidget {
                   fontSize: 40,
                   fontWeight: FontWeight.w800),
             ),
-            Row(
-              children: [
-                IconButton(
-                  color: Colors.red,
-                  icon: CircleAvatar(
-                    backgroundColor: Colors.grey,
-                    child: Icon(
-                      iconadd,
-                      color: Colors.white,
-                      size: 15,
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    color: Colors.red,
+                    icon: CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      child: Icon(
+                        iconadd,
+                        color: Colors.white,
+                        size: 25,
+                      ),
                     ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
-                ),
 
-                const SizedBox(width: 8), // Add some space between icons
-                Icon(
-                  iconremove,
-                  color: Colors.white,
-                  size: 15,
-                ),
-              ],
+                  const SizedBox(width: 8), // Add some space between icons
+                  IconButton(
+                    color: Colors.red,
+                    icon: CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      child: Icon(
+                        iconremove,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
           ],
         ),
