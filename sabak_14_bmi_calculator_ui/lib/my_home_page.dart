@@ -64,6 +64,16 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: Container(
+        height: 73,
+        color: const Color(0xffff0f65),
+        child: const Center(
+            child: Text(
+          "CALCULATOR",
+          style: TextStyle(
+              color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),
+        )),
+      ),
     );
   }
 
