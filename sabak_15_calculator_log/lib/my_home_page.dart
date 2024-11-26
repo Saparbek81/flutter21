@@ -38,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     iconColor: isMale
                         ? const Color.fromRGBO(244, 67, 54, 1)
                         : Colors.white,
-                    iconSize: isMale ? 80 : 35,
+                    iconSize: isMale ? 100 : 70,
+                    textColor: const Color(0xff2626e1),
                   ),
                   const SizedBox(width: 35),
                   malecontainer(
@@ -46,7 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     text: 'fameli',
                     iconColor: isMale ? Colors.white : Colors.red,
                     icons: Icons.male,
-                    iconSize: isMale ? 35 : 80,
+                    iconSize: isMale ? 70 : 100,
+                    textColor: const Color(0xff2626e1),
                   ),
                 ],
               ),

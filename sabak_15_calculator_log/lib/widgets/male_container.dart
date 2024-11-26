@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class malecontainer extends StatelessWidget {
@@ -8,9 +9,11 @@ class malecontainer extends StatelessWidget {
     required this.iconColor,
     this.onTap,
     required this.iconSize,
+    required this.textColor,
   });
   final IconData icons;
   final String text;
+  final Color textColor;
   final Color iconColor;
   final void Function()? onTap;
   final double iconSize;
@@ -34,13 +37,21 @@ class malecontainer extends StatelessWidget {
                 color: iconColor,
                 size: iconSize,
               ),
-              Text(
-                text,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500),
-              ),
+              AnimatedTextKit(
+                animatedTexts: [
+                  RotateAnimatedText(
+                    text.toUpperCase(),
+                    textStyle: TextStyle(
+                        color: textColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
+                  )
+                ],
+                totalRepeatCount: 15,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: false,
+              )
             ],
           ),
         ),
