@@ -7,11 +7,15 @@ class WeightContainer extends StatelessWidget {
     required this.iconadd,
     required this.iconremove,
     required this.san,
+    this.onPressedadd,
+    this.onPressedremove,
   });
   final String text;
   final IconData iconadd;
   final IconData iconremove;
   final int san;
+  final void Function()? onPressedadd;
+  final void Function()? onPressedremove;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +58,7 @@ class WeightContainer extends StatelessWidget {
                         size: 25,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: onPressedadd,
                   ),
 
                   const SizedBox(width: 8), // Add some space between icons
@@ -68,7 +72,7 @@ class WeightContainer extends StatelessWidget {
                         size: 25,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: onPressedremove,
                   ),
                 ],
               ),

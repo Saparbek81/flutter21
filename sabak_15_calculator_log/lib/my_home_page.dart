@@ -4,7 +4,9 @@ import 'package:sabak_15_calculator_log/widgets/male_container.dart';
 import 'package:sabak_15_calculator_log/widgets/weight_container.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({
+    super.key,
+  });
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -12,6 +14,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool isMale = false;
+  int height = 100;
+  int weight = 60;
+  int age = 28;
   void maleFun() {
     setState(() {
       isMale = !isMale;
@@ -39,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? const Color.fromRGBO(244, 67, 54, 1)
                         : Colors.white,
                     iconSize: isMale ? 100 : 70,
-                    textColor: const Color(0xff2626e1),
+                    textColor: isMale ? const Color(0xffceccd2) : Colors.red,
                   ),
                   const SizedBox(width: 35),
                   malecontainer(
@@ -48,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     iconColor: isMale ? Colors.white : Colors.red,
                     icons: Icons.male,
                     iconSize: isMale ? 70 : 100,
-                    textColor: const Color(0xff2626e1),
+                    textColor: isMale ? Colors.red : const Color(0xffceccd2),
                   ),
                 ],
               ),
@@ -56,30 +61,47 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 18,
             ),
-            const HeihgtContainer(
+            HeihgtContainer(
               text: 'HEIGHT',
-              san: 180,
+              san: height,
               sm: 'sm',
+              widget: Slider.adaptive(
+                thumbColor: const Color(0xffff0265),
+                activeColor: Colors.white,
+                inactiveColor: Colors.green,
+                min: 0,
+                max: 300,
+                value: height.toDouble(),
+                onChanged: (v) {
+                  var height = v.toInt();
+                  setState(() {});
+                  print(height);
+                },
+              ),
             ),
             const SizedBox(
               height: 18,
             ),
-            const Center(
+            Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   WeightContainer(
-                    text: 'WEIGHT',
+                    onPressedadd: () => setState(() => weight++),
+                    onPressedremove: () => setState(() => weight--),
+                    text: "weight",
+                    san: weight,
                     iconadd: Icons.add,
                     iconremove: Icons.remove,
-                    san: 60,
                   ),
-                  SizedBox(width: 35),
+                  const SizedBox(width: 35),
                   WeightContainer(
+                    onPressedadd: () => setState(() => age++),
+                    onPressedremove: () => setState(() => age--),
                     text: 'AGE',
                     iconadd: Icons.add,
                     iconremove: Icons.remove,
-                    san: 28,
+                    san: age,
                   ),
                 ],
               ),
@@ -87,15 +109,26 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 73,
-        color: const Color(0xffff0f65),
-        child: const Center(
-            child: Text(
-          "CALCULATOR",
-          style: TextStyle(
-              color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),
-        )),
+      bottomNavigationBar: InkWell(
+        onTap: () {
+          final recult = weight / height * height;
+          if (recult > 0 && recult <= 18.5) {
+            print("сиз арык");
+          } else if (recult > 18.5 && recult <= 35) {}
+          {
+            print('сиз жакшы');
+          }
+        },
+        child: Container(
+          height: 73,
+          color: const Color(0xffff0f65),
+          child: const Center(
+              child: Text(
+            "CALCULATOR",
+            style: TextStyle(
+                color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),
+          )),
+        ),
       ),
     );
   }

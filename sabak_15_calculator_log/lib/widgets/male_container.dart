@@ -38,20 +38,19 @@ class malecontainer extends StatelessWidget {
                 size: iconSize,
               ),
               AnimatedTextKit(
-                animatedTexts: [
-                  RotateAnimatedText(
-                    text.toUpperCase(),
-                    textStyle: TextStyle(
-                        color: textColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
-                  )
-                ],
-                totalRepeatCount: 15,
-                pause: const Duration(milliseconds: 1000),
-                displayFullTextOnTap: true,
-                stopPauseOnTap: false,
-              )
+                  animatedTexts: [
+                    RotateAnimatedText(
+                      text.toUpperCase(),
+                      textStyle: TextStyle(
+                          color: textColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                  totalRepeatCount: 15,
+                  pause: const Duration(milliseconds: 1000),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true)
             ],
           ),
         ),

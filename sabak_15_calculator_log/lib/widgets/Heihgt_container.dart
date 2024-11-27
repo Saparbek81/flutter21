@@ -6,10 +6,12 @@ class HeihgtContainer extends StatelessWidget {
     required this.text,
     required this.sm,
     required this.san,
+    required this.widget,
   });
   final String text;
   final String sm;
   final int san;
+  final Widget widget;
 
   @override
   Widget build(BuildContext context) {
@@ -60,15 +62,7 @@ class HeihgtContainer extends StatelessWidget {
                 ),
               ],
             ),
-
-            Slider.adaptive(
-              thumbColor: const Color(0xffff0265),
-              activeColor: Colors.white,
-              inactiveColor: Colors.green,
-              max: 230,
-              value: 180,
-              onChanged: (v) {},
-            )
+            widget,
           ],
         ),
       ),
