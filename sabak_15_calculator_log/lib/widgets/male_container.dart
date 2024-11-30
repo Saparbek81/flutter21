@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class malecontainer extends StatelessWidget {
   const malecontainer({
     super.key,

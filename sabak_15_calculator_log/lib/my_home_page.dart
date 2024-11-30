@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sabak_15_calculator_log/widgets/Heihgt_container.dart';
+import 'package:sabak_15_calculator_log/widgets/calculator.dart';
 import 'package:sabak_15_calculator_log/widgets/male_container.dart';
 import 'package:sabak_15_calculator_log/widgets/weight_container.dart';
 
@@ -68,13 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
               widget: Slider.adaptive(
                 thumbColor: const Color(0xffff0265),
                 activeColor: Colors.white,
-                inactiveColor: Colors.green,
+                inactiveColor: Colors.grey,
                 min: 0,
                 max: 300,
                 value: height.toDouble(),
                 onChanged: (v) {
-                  var height = v.toInt();
                   setState(() {});
+                  var height = v.toInt();
                   print(height);
                 },
               ),
@@ -109,27 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: InkWell(
-        onTap: () {
-          final recult = weight / height * height;
-          if (recult > 0 && recult <= 18.5) {
-            print("сиз арык");
-          } else if (recult > 18.5 && recult <= 35) {}
-          {
-            print('сиз жакшы');
-          }
-        },
-        child: Container(
-          height: 73,
-          color: const Color(0xffff0f65),
-          child: const Center(
-              child: Text(
-            "CALCULATOR",
-            style: TextStyle(
-                color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),
-          )),
-        ),
-      ),
+      bottomNavigationBar: Calculator(weight: weight, height: height),
     );
   }
 
