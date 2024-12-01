@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:sabak_16_weaser_app_1/conctans/app_text_styles.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -13,6 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String weatherInfo = "Маалымат жуктолуудо";
   String sityName = "Шаарлар";
+
   void weatherFun() async {
     final url = Uri.parse(
         'https://api.openweathermap.org/data/2.5/weather?q=bishkek,&appid=41aa18abb8974c0ea27098038f6feb1b');
@@ -47,16 +49,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text('Погода'),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color(0xff66d8f1),
+        appBar: AppBar(
+          backgroundColor: const Color(0xff66d8f1),
+          title: const Icon(Icons.search),
+          actions: const [
+            Icon(Icons.menu),
+          ],
         ),
-      ),
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text("($sityName шаарындагы температура: $weatherInfo gradus"),
-        ]),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 31.5),
+          child: Column(children: [
+            const Text(
+              "Bishkek",
+              style: AppTextStyles.lacotionStyles,
+            ),
+            const Text("Kyrgyzstan", style: AppTextStyles.lacotionStyles),
+            const Text(
+              "Tue,jan 30",
+              style: AppTextStyles.dataStyles,
+            ),
+            Text("($sityName шаарындагы температура: $weatherInfo gradus"),
+            Image.asset('assets/images/icon.png'),
+          ]),
+        ),
       ),
     );
   }
